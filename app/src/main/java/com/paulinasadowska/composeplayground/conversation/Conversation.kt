@@ -1,4 +1,4 @@
-package com.paulinasadowska.composeplayground
+package com.paulinasadowska.composeplayground.conversation
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items

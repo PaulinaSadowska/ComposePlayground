@@ -1,4 +1,4 @@
-package com.paulinasadowska.composeplayground
+package com.paulinasadowska.composeplayground.conversation
 
 object SampleData {
 

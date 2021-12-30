@@ -1,4 +1,4 @@
-package com.paulinasadowska.composeplayground
+package com.paulinasadowska.composeplayground.conversation
 
 import android.content.res.Configuration
 import androidx.compose.animation.animateColorAsState
@@ -21,6 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.paulinasadowska.composeplayground.R
 import com.paulinasadowska.composeplayground.ui.theme.ComposePlaygroundTheme
 
 @Composable
