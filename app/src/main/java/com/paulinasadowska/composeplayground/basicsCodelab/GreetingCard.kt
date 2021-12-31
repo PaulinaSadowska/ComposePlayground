@@ -1,5 +1,6 @@
 package com.paulinasadowska.composeplayground.basicsCodelab
 
+import android.content.res.Configuration
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
@@ -17,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.paulinasadowska.composeplayground.ui.theme.ComposePlaygroundTheme
@@ -52,9 +54,12 @@ fun GreetingCard(name: String) {
                             .padding(bottom = extraPadding.value.coerceAtLeast(0.dp))
             ) {
                 Text("Hello,")
-                Text(name)
+                Text(name, style = MaterialTheme.typography.h4.copy(
+                        fontWeight = FontWeight.ExtraBold
+                ))
             }
             OutlinedButton(
+                    modifier = Modifier.padding(top = 16.dp),
                     onClick = { setIsExpanded(!isExpanded) }
             ) {
                 Text(text = if (isExpanded) "Show less" else "Show more")
@@ -65,6 +70,11 @@ fun GreetingCard(name: String) {
 
 @Composable
 @Preview(showBackground = true)
+@Preview(
+        showBackground = true,
+        uiMode = Configuration.UI_MODE_NIGHT_YES,
+        name = "GreetingCardPreviewDark"
+)
 fun GreetingCardPreview() {
     ComposePlaygroundTheme {
         GreetingCard(name = "Compose")

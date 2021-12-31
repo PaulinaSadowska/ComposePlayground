@@ -1,5 +1,6 @@
 package com.paulinasadowska.composeplayground.basicsCodelab
 
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -19,9 +20,18 @@ fun Greetings(names: List<String> = List(1000) { "$it" }) {
 }
 
 @Composable
-@Preview
+@Preview(
+        showBackground = true,
+        widthDp = 320,
+        uiMode = UI_MODE_NIGHT_YES,
+        name = "GreetingsPreviewDark"
+)
+@Preview(
+        showBackground = true,
+        widthDp = 320,
+)
 fun GreetingsPreview() {
     ComposePlaygroundTheme {
-        Greetings(listOf("Compose", "Test"))
+        Greetings(List(20){"$it"})
     }
 }

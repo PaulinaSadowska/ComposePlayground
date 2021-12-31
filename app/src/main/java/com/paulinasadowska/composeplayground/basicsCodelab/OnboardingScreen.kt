@@ -1,5 +1,6 @@
 package com.paulinasadowska.composeplayground.basicsCodelab
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,14 +20,17 @@ import com.paulinasadowska.composeplayground.ui.theme.ComposePlaygroundTheme
 fun OnboardingScreen(onContinueClicked: () -> Unit) {
 
     Surface(
-            color = MaterialTheme.colors.background
+            color = MaterialTheme.colors.surface
     ) {
         Column(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "Welcome to the Basics Codelab!")
+            Text(
+                    text = "Welcome to the Basics Codelab!",
+                    color = MaterialTheme.colors.onSurface
+            )
             Button(
                     modifier = Modifier.padding(vertical = 24.dp),
                     onClick = onContinueClicked
@@ -38,6 +42,12 @@ fun OnboardingScreen(onContinueClicked: () -> Unit) {
 }
 
 @Composable
+@Preview(
+        showBackground = true,
+        widthDp = 320,
+        heightDp = 320,
+        uiMode = Configuration.UI_MODE_NIGHT_YES,
+        name = "GreetingsPreviewDark")
 @Preview(showBackground = true, widthDp = 320, heightDp = 320)
 fun OnboardingScreenPreview() {
     ComposePlaygroundTheme {
