@@ -1,29 +1,21 @@
 package com.paulinasadowska.composeplayground.layoutsCodelab
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Layers
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.paulinasadowska.composeplayground.ui.theme.ComposePlaygroundTheme
 
 @Composable
 fun LayoutsCodelabApp() {
-    Column {
-        TopAppBar(
-                title = { Text(text = "Layouts in Jetpack Compose") },
-                navigationIcon = {
-                    Icon(
-                            imageVector = Icons.Default.Layers,
-                            contentDescription = "Button with a heart"
-                    )
-                }
-        )
-        PhotographerCard()
+    Scaffold(
+            topBar = { LayoutsCodelabAppBar() },
+            bottomBar = { LayoutsCodelabBottomBar() },
+    ) { innerPadding ->
+        PhotographerCard(Modifier.padding(innerPadding))
     }
+
 }
 
 @Composable
