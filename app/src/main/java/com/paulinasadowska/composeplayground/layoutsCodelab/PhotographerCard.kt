@@ -1,6 +1,7 @@
 package com.paulinasadowska.composeplayground.layoutsCodelab
 
 import android.content.res.Configuration
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -14,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
 import com.paulinasadowska.composeplayground.ui.theme.ComposePlaygroundTheme
 
 @Composable
@@ -24,11 +26,14 @@ fun PhotographerCard(modifier: Modifier = Modifier, index: Int = 0) {
     ) {
         Row(Modifier.padding(16.dp)) {
             Surface(
-                    modifier = Modifier.size(50.dp),
+                    modifier = Modifier.size(60.dp),
                     shape = CircleShape,
                     color = MaterialTheme.colors.onPrimary.copy(alpha = 0.2f)
             ) {
-
+                Image(
+                        painter = rememberImagePainter(data = IMAGE_URL),
+                        contentDescription = null
+                )
             }
             Column(Modifier
                     .padding(start = 16.dp)
@@ -56,3 +61,5 @@ fun PhotographerCardPreview() {
         PhotographerCard()
     }
 }
+
+private const val IMAGE_URL = "https://picsum.photos/id/40/400/400"
