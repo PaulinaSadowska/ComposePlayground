@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.paulinasadowska.composeplayground.layoutsCodelab.Chip
 import com.paulinasadowska.composeplayground.layoutsCodelab.StaggeredGrid
 import com.paulinasadowska.composeplayground.ui.theme.ComposePlaygroundTheme
 
