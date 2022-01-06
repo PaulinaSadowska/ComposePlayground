@@ -1,5 +1,6 @@
 package com.paulinasadowska.composeplayground.layoutsCodelab
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
@@ -9,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.paulinasadowska.composeplayground.layoutsCodelab.staggeredChips.BodyContent
 import com.paulinasadowska.composeplayground.ui.theme.ComposePlaygroundTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -31,7 +33,10 @@ fun LayoutsCodelabApp() {
                 )
             },
     ) { innerPadding ->
-        PhotographerCardList(Modifier.padding(innerPadding), scrollState, listSize)
+        Column {
+            BodyContent()
+            PhotographerCardList(Modifier.padding(innerPadding), scrollState, listSize)
+        }
     }
 }
 
